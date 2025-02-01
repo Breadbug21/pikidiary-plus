@@ -47,7 +47,7 @@ document.getElementsByClassName("char-counter")[0].appendChild(swag);
 
 // adds the tab
 var newtab = document.createElement('a');
-newtab.innerHTML = 'PikiDiary+';
+newtab.innerHTML = 'PikiDiary+ ❤️';
 newtab.classList.add("tab");
 newtab.style.cursor = "pointer";
 document.getElementsByClassName("tab-cont")[0].appendChild(newtab);
