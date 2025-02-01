@@ -8,7 +8,7 @@ function test() {
         elem[i].style.display = "none";
     }
 
-    document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.1.5 early access</h1> <input id="idea" type="checkbox">post ideas</input> <p>made with love by nomaakip and wish <3</p>';
+    document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.1.5 early access</h1> <input id="idea" type="checkbox">post ideas</input> <p>made with love by nomaakip, wish, and squirrel <3</p>';
     
     if (ideac == "b") {
         swag.style.display = "block";
