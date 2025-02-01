@@ -16,7 +16,7 @@
 
     function test() {
         document.getElementsByClassName("posts")[0].style.display = "none";
-        document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.0.4</h1> <input id="idea" type="checkbox">post ideas</input>';
+        document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.0.6(localstorage soon)</h1> <input id="idea" type="checkbox">post ideas</input>';
         document.getElementById('idea').checked = true;
         document.getElementById('idea').addEventListener("click", ideae);
 
