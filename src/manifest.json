@@ -12,7 +12,7 @@
       {
       
        "matches": ["https://pikidiary.lol/@hacks.guide", "https://pikidiary.lol/@wish", "https://pikidiary.lol/@squirrel"],
-       "js": ["u.js"]
+       "js": ["achievements/dev.js"]
       }
     ],
   "icons": {

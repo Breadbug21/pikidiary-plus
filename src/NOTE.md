@@ -1,0 +1,1 @@
+errors in the manifest are caused by other vs code plugins so dont report it

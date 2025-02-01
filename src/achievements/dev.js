@@ -5,3 +5,4 @@ imgb.innerHTML = '<div style="display: flex; gap: 8px;"><img src="/img/appicon/i
 
 document.getElementById('extra-achievements').appendChild(imgb);
 
+// hi
