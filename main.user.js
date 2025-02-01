@@ -12,9 +12,24 @@
 (function() {
     'use strict';
 
+    let ideac = true;
+
     function test() {
         document.getElementsByClassName("posts")[0].style.display = "none";
-        document.getElementsByClassName("pagination")[0].innerHTML = "<h1>PikiDiary+ beta 0.0.4</h1>";
+        document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.0.4</h1> <input id="idea" type="checkbox">post ideas</input>';
+        document.getElementById('idea').checked = true;
+        document.getElementById('idea').addEventListener("click", ideae);
+
+    }
+
+    function ideae() {
+        if (document.getElementById('idea').checked == true){
+    swag.style.display = "block";
+            ideac = true;
+  } else {
+    swag.style.display = "none";
+      ideac = false;
+  }
     }
 
     const greg = new Array();
@@ -42,4 +57,5 @@
     document.getElementsByClassName("tab-cont")[0].appendChild(newtab);
 
     newtab.addEventListener("click", test);
+
 })();
