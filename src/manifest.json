@@ -10,9 +10,12 @@
       },
     
       {
-      
-       "matches": ["https://pikidiary.lol/@hacks.guide", "https://pikidiary.lol/@hacks.guide?*", "https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*" , "https://pikidiary.lol/@squirrel", "https://pikidiary.lol/@squirrel?*"],
-       "js": ["achievements/dev.js"]
+        "matches": ["https://pikidiary.lol/@hacks.guide", "https://pikidiary.lol/@hacks.guide?*", "https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*" , "https://pikidiary.lol/@squirrel", "https://pikidiary.lol/@squirrel?*"],
+        "js": ["achievements/dev.js"]
+      },
+      {
+        "matches": ["https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*"],
+        "js": ["achievements/secret.js"]
       }
     ],
   "icons": {

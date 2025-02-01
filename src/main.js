@@ -9,7 +9,8 @@ function test() {
     document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1>PikiDiary+ Beta</h1>
     <input id="idea" type="checkbox">post ideas</input>
-    <p>made with love by nomaakip, wish, and squirrel <3</p>`;
+    <p>made with love by nomaakip, wish, and squirrel <3</p>
+    <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus-beta/issues/new?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen&template=Blank+issue"><button>secret</button></a>`;
     
     if (ideac == "b") {
         swag.style.display = "block";
