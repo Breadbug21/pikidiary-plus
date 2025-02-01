@@ -3,13 +3,14 @@ An unofficial userscript for https://pikidiary.lol
 # Features
 - Post idea generator
 # How to Install (from repo)
-- Download main.user.js
-- Click "Utilities"
-![image](https://github.com/user-attachments/assets/a0c3cf2b-7df6-4a82-9e60-c1c2a185ebda)
+- Go to chrome://extensions
 
-- Click on the button next to "Import from file"
-  
-![image](https://github.com/user-attachments/assets/5581bf65-5b4c-4562-8c63-d269996ebc4b)
+- Extract the extension zip to a safe location
 
-- Select main.user.js
-- Done!
+- Click "Load unpacked"
+
+![image](https://github.com/user-attachments/assets/21ce1512-68a2-4f82-9a9e-741147101c5b)
+
+- Select the extracted folder
+
+- Enjoy!
