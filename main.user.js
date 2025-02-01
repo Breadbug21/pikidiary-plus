@@ -15,11 +15,11 @@
     let ideac = true;
 
     function test() {
-        document.getElementsByClassName("posts")[0].style.display = "none";
-        document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.0.6(localstorage soon)</h1> <input id="idea" type="checkbox">post ideas</input>';
-        document.getElementById('idea').checked = true;
-        document.getElementById('idea').addEventListener("click", ideae);
-
+        //document.getElementsByClassName("posts")[0].style.display = "none";
+        //document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.0.6(localstorage soon)</h1> <input id="idea" type="checkbox">post ideas</input>';
+        //document.getElementById('idea').checked = true;
+        //document.getElementById('idea').addEventListener("click", ideae);
+        window.location.href = "https://stupid-idiots-united.github.io/website/PikiPlus.html";
     }
 
     function ideae() {
