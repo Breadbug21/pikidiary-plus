@@ -12,6 +12,11 @@
 (function() {
     'use strict';
 
+    function test() {
+        document.getElementsByClassName("posts")[0].style.display = "none";
+        document.getElementsByClassName("pagination")[0].innerHTML = "<h1>PikiDiary+ beta 0.0.4</h1>";
+    }
+
     const greg = new Array();
 
     greg[0] = "greg.site when";
@@ -29,4 +34,12 @@
     swag.innerHTML = "post idea: " + greg[rand];
     document.getElementsByClassName("char-counter")[0].appendChild(swag);
 
+
+    var newtab = document.createElement('a');
+    newtab.innerHTML = 'PikiDiary+';
+    newtab.classList.add("tab");
+    newtab.style.cursor = "pointer";
+    document.getElementsByClassName("tab-cont")[0].appendChild(newtab);
+
+    newtab.addEventListener("click", test);
 })();
