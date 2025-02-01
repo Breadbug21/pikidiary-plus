@@ -1,5 +1,3 @@
-
-
 function test() {
 
     var elem = document.querySelectorAll(".post");
@@ -8,7 +6,7 @@ function test() {
         elem[i].style.display = "none";
     }
 
-    document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta 0.1.5 early access</h1> <input id="idea" type="checkbox">post ideas</input> <p>made with love by nomaakip, wish, and squirrel <3</p>';
+    document.getElementsByClassName("pagination")[0].innerHTML = '<h1>PikiDiary+ beta early access</h1> <input id="idea" type="checkbox">post ideas</input> <p>made with love by nomaakip, wish, and squirrel <3</p>';
     
     if (ideac == "b") {
         swag.style.display = "block";
@@ -23,7 +21,7 @@ function test() {
 
 }
 
-
+// array for post ideas
 const greg = new Array();
 
 greg[0] = "greg.site when";
@@ -43,7 +41,7 @@ var swag = document.createElement('div');
 swag.innerHTML = "Dont know what to post? Here's a Post idea: " + greg[rand];
 document.getElementsByClassName("char-counter")[0].appendChild(swag);
 
-
+// adds the tab
 var newtab = document.createElement('a');
 newtab.innerHTML = 'PikiDiary+';
 newtab.classList.add("tab");
@@ -71,6 +69,7 @@ ideac = "b";
 }
 
 function ideae() {
+    // idea checkbox
     if (document.getElementById('idea').checked == true){
 swag.style.display = "block";
         ideac = "b";
