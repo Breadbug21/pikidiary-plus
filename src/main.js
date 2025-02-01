@@ -81,8 +81,3 @@ swag.style.display = "none";
   localStorage.setItem("ideac", ideac);
 }
 }
-
-
-
-
-// I'm cumming and jorking it to this !!!
