@@ -37,7 +37,7 @@
     greg[0] = "greg.site when";
     greg[1] = "greg";
     greg[2] = "i am steve";
-    greg[3] = "say gex";
+    greg[3] = "love yourself today";
     greg[4] = "freaky";
     greg[5] = "blahaj";
     greg[6] = "hello chat";
