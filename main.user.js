@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      2025-02-01
 // @description  PikiDiary+ Beta
-// @author       nomaakip
+// @author       Nomaakip & Stupid Idiots United
 // @match        *://*.pikidiary.lol/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=pikidiary.lol
 // @grant        none
