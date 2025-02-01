@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Pikidiary+
+// @name         PikiDiary+
 // @namespace    http://tampermonkey.net/
 // @version      2025-02-01
-// @description  pikidiary+ beta
+// @description  PikiDiary+ Beta
 // @author       nomaakip
 // @match        *://*.pikidiary.lol/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=pikidiary.lol
