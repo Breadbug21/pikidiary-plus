@@ -1,7 +1,7 @@
 {
     "name": "PikiDiary+",
     "version": "0.1.5",
-    "description": "PikiDiary+ is an extension to improve your experience on https://pikidiary.lol! Made with <3 by Nomaakip and Wish",
+    "description": "PikiDiary+ is an extension to improve your experience on https://pikidiary.lol! Made with <3 by Nomaakip, Wish, and Squirrel",
     "manifest_version": 3,
     "content_scripts": [
       {
