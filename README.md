@@ -1,5 +1,5 @@
 # PikiDiary+
-An unofficial userscript for https://pikidiary.lol
+An unofficial extension for https://pikidiary.lol
 # Features
 - Post idea generator
 # How to Install (from repo)
