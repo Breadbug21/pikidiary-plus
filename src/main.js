@@ -91,9 +91,11 @@ function test() {
         document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
     <input id="idea" type="checkbox">post ideas</input>
+    <br>
+    <a href="https://stupid-idiots-united.github.io/website/confirm"><button>Send ping to counter so we can estimate how many people use PikiDiary+</button></a>
     <p id="luv">made with love by nomaakip, wish, and squirrel <3</p>
     <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus-beta/issues/new?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen&template=Blank+issue"><button id="shh">secret</button></a>
-    <h1 id="currency">Pikicoin clicker(beta)</h1>
+    <h1 id="currency">PikiCoin Clicker (beta)</h1>
     <div id="cme"><img style="cursor:pointer;" height="50" width="55" id="pc" src="https://f.feridinha.com/vc9av.png"></div>
     <h2 id="pl"></h2>`;
     document.getElementById('pl').innerHTML = "Pikicoins:" + pikicoin;
@@ -104,6 +106,8 @@ function test() {
     document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
     <input id="idea" type="checkbox">post ideas</input>
+    <br>
+    <a href="https://stupid-idiots-united.github.io/website/confirm"><button>Send ping to counter so we can estimate how many people use PikiDiary+</button></a>
     <p id="luv">made with love by nomaakip, wish, and squirrel <3</p>
     <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus-beta/issues/new?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen&template=Blank+issue"><button id="shh">secret</button></a>`;
     }
