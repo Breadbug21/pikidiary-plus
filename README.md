@@ -2,6 +2,7 @@
 An unofficial extension for https://pikidiary.lol!
 
 Codeberg mirror: https://codeberg.org/Stupid-Idiots-United/pikidiary-plus
+
 GitHub mirror: https://github.com/Stupid-Idiots-United/pikidiary-plus
 # Features
 - Post idea generator
