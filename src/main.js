@@ -1,3 +1,13 @@
+let pikicoin = JSON.parse(localStorage.getItem("pikicoin"));
+
+if (pikicoin) {
+    pikicoin = pikicoin;
+}
+else {
+    pikicoin = 0;
+}
+
+let clicked = 0;
 
 // array for post ideas
 const greg = new Array();
@@ -61,19 +71,45 @@ document.getElementsByClassName("tab-cont")[0].appendChild(newtab);
 
 newtab.addEventListener("click", test);
 
+function pikic() {
+pikicoin++;
+localStorage.setItem("pikicoin", JSON.stringify(pikicoin));
+document.getElementById('pl').innerHTML = "Pikicoins:" + pikicoin;
+}
+
 function test() {
 
+
+    
     var elem = document.querySelectorAll(".post");
     var i = 0, length = elem.length;
     for ( ; i < length; i++) {
         elem[i].style.display = "none";
     }
 
+    if (clicked >= 10) {
+        document.getElementsByClassName("pagination")[0].innerHTML = `
+    <h1 id="plus">PikiDiary+ Beta</h1>
+    <input id="idea" type="checkbox">post ideas</input>
+    <p id="luv">made with love by nomaakip, wish, and squirrel <3</p>
+    <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus-beta/issues/new?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen&template=Blank+issue"><button id="shh">secret</button></a>
+    <h1 id="currency">Pikicoin clicker(beta)</h1>
+    <div id="cme"><img style="cursor:pointer;" height="50" width="55" id="pc" src="https://f.feridinha.com/vc9av.png"></div>
+    <h2 id="pl"></h2>`;
+    document.getElementById('pl').innerHTML = "Pikicoins:" + pikicoin;
+    document.getElementById("cme").addEventListener("click", pikic);
+    }
+    else {
+    clicked++;
     document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
     <input id="idea" type="checkbox">post ideas</input>
     <p id="luv">made with love by nomaakip, wish, and squirrel <3</p>
     <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus-beta/issues/new?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen&template=Blank+issue"><button id="shh">secret</button></a>`;
+    }
+
+
+
 
     
     const anim = [
@@ -106,4 +142,17 @@ function test() {
 
 }
 
+
+function see() {
+    if (newtab.classList.contains('active')) {
+        newtab.classList.remove('active');
+        }
+  
+}
+
+
+document.querySelectorAll(".tab")[0].addEventListener("click", see);
+document.querySelectorAll(".tab")[1].addEventListener("click", see);
+document.querySelectorAll(".tab")[2].addEventListener("click", see);
+document.querySelectorAll(".tab")[3].addEventListener("click", see);
 
