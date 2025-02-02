@@ -162,7 +162,7 @@ document.querySelectorAll(".tab")[3].addEventListener("click", see);
 
 
 
-const targetString = "021";
+const targetString = "022";
 
 const textFileURL = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/update/version.txt";
 
@@ -194,3 +194,13 @@ async function verc() {
 
 
 verc();
+
+
+if (pikicoin >= 1000) {
+    document.getElementById('extra-achievements').style.display = 'block';
+    var imgd = document.createElement("div");
+
+imgd.innerHTML = '<div style="display: flex; gap: 8px;"><img src="https://f.feridinha.com/vc9av.png" style="width: 44px; height: 44px; box-sizing: border-box; border: solid 1px #CCC; padding: 2px;"><div style="display: flex; flex-direction: column;"><b style="font-size: 19px;">[Piki+] #rich</b><span style="font-size: 11px;">Have more than 1000 pikicoins</span></div></div><br>';
+
+document.getElementById('extra-achievements').appendChild(imgd);
+}
