@@ -31,3 +31,5 @@ and much more!
 - Load the XPI you just downloaded
 
 - shit yourself because piki
+
+- **i** Note that this is only for as long as Firefox is active. If you decide to restart, you have to reinstall the add-on.
