@@ -10,6 +10,10 @@
     "version": "0.2.0",
     "description": "PikiDiary+ is an extension to improve your experience on https://pikidiary.lol! Made with <3 by Nomaakip, Wish, and Squirrel.",
     "manifest_version": 3,
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_icon": "png/128.png"
+    },
     "content_scripts": [
       {
         "matches": ["https://*.pikidiary.lol/*"],
