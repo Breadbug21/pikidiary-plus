@@ -6,7 +6,7 @@ An unofficial extension for https://pikidiary.lol
 - Easter eggs
   
 and much more!
-# How to Install (from repo)
+# How to Install (for Chrome)
 - Download src folder
 
 - Go to chrome://extensions
@@ -20,3 +20,14 @@ and much more!
 - Select the src folder
 
 - Enjoy!
+
+# How to Install (for Firefox)
+- Download XPI from releases
+
+- Go to about:debugging#/runtime/this-firefox
+
+- Click "Load Temporary Add-on"
+
+- Load the XPI you just downloaded
+
+- shit yourself because piki
