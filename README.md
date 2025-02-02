@@ -1,4 +1,4 @@
-# PikiDiary+
+# PikiDiary+ BETA
 An unofficial extension for https://pikidiary.lol
 # Features
 - Post idea generator
