@@ -1,5 +1,6 @@
 # PikiDiary+ BETA 
 An unofficial extension for https://pikidiary.lol!
+## discord: https://discord.gg/bPfbD4QJSm
 
 Codeberg mirror: https://codeberg.org/Stupid-Idiots-United/pikidiary-plus
 
