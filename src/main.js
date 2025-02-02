@@ -160,3 +160,37 @@ document.querySelectorAll(".tab")[1].addEventListener("click", see);
 document.querySelectorAll(".tab")[2].addEventListener("click", see);
 document.querySelectorAll(".tab")[3].addEventListener("click", see);
 
+
+
+const targetString = "021";
+
+const textFileURL = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/update/version.txt";
+
+async function verc() {
+    try {
+        const response = await fetch(textFileURL);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const textContent = await response.text();
+
+        const trimmedText = textContent.trim();
+
+        if (trimmedText === targetString) {
+            console.log("No updates avaiable.");
+        } else {
+            console.log("An update is avaiable.");
+            const ye = document.createElement('h1');
+            ye.innerHTML = 'An update is available! Please download it <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus"> here.</a>';
+            ye.style.display = "block";
+            document.getElementsByClassName('char-counter')[0].appendChild(ye);
+        }
+    } catch (error) {
+        console.error("Error fetching or comparing the text:", error);
+    }
+}
+
+
+verc();
