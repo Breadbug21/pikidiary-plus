@@ -42,10 +42,17 @@ and much more!
 - **i** Note that this is only for as long as Firefox is active. If you decide to restart, you have to reinstall the add-on.
 
 # How to build from source (multi)
+
+## Req:
+- Basic technical skills
+- Any OS that's newer than the one on your 2004 thinkpad.
+
+## Instructions
+
 - Download the source (obviously)
 
 - Go into `src` and select everything inside.
 
-- ZIP it (most modern OSs support this)
+- ZIP it
 
 - Follow install instructions above.
