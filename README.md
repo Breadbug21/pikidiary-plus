@@ -29,14 +29,23 @@ and much more!
 - Enjoy!
 
 # How to Install (for Firefox)
-- Download XPI from releases
+- Download the ZIP/XPI from releases
 
 - Go to about:debugging#/runtime/this-firefox
 
 - Click "Load Temporary Add-on"
 
-- Load the XPI you just downloaded
+- Load the ZIP/XPI file you just downloaded
 
 - shit yourself because piki
 
 - **i** Note that this is only for as long as Firefox is active. If you decide to restart, you have to reinstall the add-on.
+
+# How to build from source (multi)
+- Download the source (obviously)
+
+- Go into `src` and select everything inside.
+
+- ZIP it (most modern OSs support this)
+
+- Follow install instructions above.
