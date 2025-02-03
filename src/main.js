@@ -1,3 +1,5 @@
+//this code is gonna make me fucking depressed
+
 let pikicoin = JSON.parse(localStorage.getItem("pikicoin"));
 
 if (pikicoin) {
@@ -8,6 +10,9 @@ else {
 }
 
 let clicked = 0;
+
+
+
 
 // array for post ideas
 const greg = new Array();
@@ -101,6 +106,7 @@ function test() {
         document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
     <input id="idea" type="checkbox">post ideas</input>
+    <input id="starr" type="checkbox">Star Posts [BETA]</input>
     <br>
     <a href="https://stupid-idiots-united.github.io/website/confirm"><button>Send ping to counter so we can estimate how many people use PikiDiary+</button></a>
     <p id="luv">made with love by nomaakip (@hacks.guide), wish (@wish), squirrel (@squirrel), and names (@names)<3</p>
@@ -116,6 +122,7 @@ function test() {
     document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
     <input id="idea" type="checkbox">post ideas</input>
+    <input id="starr" type="checkbox">Star Posts [BETA]</input>
     <br>
     <a href="https://stupid-idiots-united.github.io/website/confirm"><button>Send ping to counter so we can estimate how many people use PikiDiary+</button></a>
     <p id="luv">made with love by nomaakip, wish, and squirrel <3</p>
@@ -136,6 +143,16 @@ function test() {
         iterations: 1
       };
 
+
+      
+    if (starredd == 'a') {
+            document.getElementById('starr').checked = true;
+    }
+    if (starredd == 'b') {
+        document.getElementById('starr').checked = false;
+    }
+    
+
       document.querySelectorAll(".tab.active")[0].classList.remove('active');
 
       newtab.classList.add('active');
@@ -153,7 +170,7 @@ function test() {
         }
 
     document.getElementById('idea').addEventListener("click", ideae);
-
+    document.getElementById('starr').addEventListener("click", StarSettings);
 }
 
 
@@ -161,7 +178,25 @@ function see() {
     if (newtab.classList.contains('active')) {
         newtab.classList.remove('active');
         }
-  
+        
+}
+
+function StarSettings() {
+    let starButton = document.getElementById('starfrfr');
+    if (document.getElementById('starr').checked == true) {
+        starredd = 'a';
+        localStorage.setItem("starredd", JSON.stringify(starredd));
+        starTab.style.display = 'block';
+        starButton.style.display = 'block';
+    }
+    else {
+        starredd = 'b';
+        localStorage.setItem("starredd", JSON.stringify(starredd));
+        document.querySelectorAll('#starfrfr').forEach(star => {
+            starTab.style.display = 'none';
+        star.style.display = 'none';
+        });
+    }
 }
 
 
@@ -173,7 +208,7 @@ document.querySelectorAll(".tab")[3].addEventListener("click", see);
 
 
 
-const targetString = "022";
+const targetString = "023";
 
 const textFileURL = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/update/version.txt";
 
@@ -239,6 +274,7 @@ function StarTab() {
     document.getElementsByClassName('pagination')[0].animate([{ opacity: "0" }, { opacity: "1" }], { duration: 200 });
 }
 
+
 document.querySelectorAll('.post').forEach(post => {
     let starButton = document.createElement("button");
     starButton.classList.add('star-button');
@@ -246,6 +282,7 @@ document.querySelectorAll('.post').forEach(post => {
     starButton.style.cursor = "pointer";
     starButton.style.background = "none";
     starButton.style.border = "none";
+    starButton.id = "starfrfr";
 
 
     if (!post.id) post.id = "post-" + Math.random().toString(36).substr(2, 9);
@@ -267,6 +304,7 @@ document.querySelectorAll('.post').forEach(post => {
     }
 });
 
+
 function toggleStar(postId, starButton) {
     let starredPosts = JSON.parse(localStorage.getItem("starredPosts")) || [];
     if (starredPosts.includes(postId)) {
@@ -278,3 +316,30 @@ function toggleStar(postId, starButton) {
     }
     localStorage.setItem("starredPosts", JSON.stringify(starredPosts));
 }
+
+let starredd = JSON.parse(localStorage.getItem("starredd"));
+
+    if (starredd) {
+        starredd = starredd;
+        let starButton = document.getElementById('starfrfr');
+    if (starredd == 'b') {
+        document.querySelectorAll('#starfrfr').forEach(star => {
+            starTab.style.display = 'none';
+        star.style.display = 'none';
+        });
+    }
+    if (starredd == 'a') {
+        starTab.style.display = 'block';
+        starButton.style.display = 'block';
+    }
+}
+
+
+else {
+    starredd = 'a';
+    let starButton = document.getElementById('starfrfr');
+        starTab.style.display = 'block';
+        starButton.style.display = 'block';
+    }
+
+
