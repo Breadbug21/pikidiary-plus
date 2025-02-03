@@ -22,6 +22,7 @@ greg[6] = "hello chat";
 greg[7] = "omfg pikidiary is so #swag and #monabased... peak";
 greg[8] = "pikidiary my beloved";
 greg[9] = "i fucking love pikidiary";
+greg[10] = "say gex is peak"
 
 const rand = Math.floor(Math.random() * greg.length);
 
@@ -60,16 +61,28 @@ swag.style.display = "none";
   localStorage.setItem("ideac", ideac);
 }
 }
+// the starred tab
+var starTab = document.createElement('a');
+starTab.innerHTML = 'Starred';
+starTab.classList.add("tab");
+starTab.style.cursor = "pointer";
+document.getElementsByClassName("tab-cont")[0].appendChild(starTab);
+starTab.addEventListener("click", StarTab);
 
+var seperator = document.createElement('div');
+seperator.innerHTML = "<p><b>|</b></p>";
+seperator.style = "margin-top: -4px;";
+document.getElementsByClassName("tab-cont")[0].appendChild(seperator);
 
 // adds the tab
 var newtab = document.createElement('a');
 newtab.innerHTML = 'PikiDiary+ ❤️';
 newtab.classList.add("tab");
-newtab.style.cursor = "pointer";
+newtab.style = "margin-top: -3px; cursor: pointer;";
 document.getElementsByClassName("tab-cont")[0].appendChild(newtab);
-
 newtab.addEventListener("click", test);
+
+
 
 function pikic() {
 pikicoin++;
@@ -78,9 +91,6 @@ document.getElementById('pl').innerHTML = "Pikicoins:" + pikicoin;
 }
 
 function test() {
-
-
-    
     var elem = document.querySelectorAll(".post");
     var i = 0, length = elem.length;
     for ( ; i < length; i++) {
@@ -162,6 +172,7 @@ document.querySelectorAll(".tab")[3].addEventListener("click", see);
 
 
 
+
 const targetString = "022";
 
 const textFileURL = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/update/version.txt";
@@ -203,4 +214,67 @@ if (pikicoin >= 1000) {
 imgd.innerHTML = '<div style="display: flex; gap: 8px;"><img src="https://f.feridinha.com/vc9av.png" style="width: 44px; height: 44px; box-sizing: border-box; border: solid 1px #CCC; padding: 2px;"><div style="display: flex; flex-direction: column;"><b style="font-size: 19px;">[Piki+] #rich</b><span style="font-size: 11px;">Have more than 1000 pikicoins</span></div></div><br>';
 
 document.getElementById('extra-achievements').appendChild(imgd);
+}
+
+
+
+
+
+function StarTab() {
+    document.querySelectorAll(".tab").forEach(tab => tab.classList.remove('active'));
+    starTab.classList.add('active');
+    document.querySelectorAll(".post").forEach(post => post.style.display = "none");
+
+    let starredPosts = JSON.parse(localStorage.getItem("starredPosts")) || [];
+    document.querySelectorAll(".post").forEach(post => {
+        if (starredPosts.includes(post.id)) {
+            post.style.display = "block";
+            let starButton = post.querySelector(".star-button");
+            if (starButton) {
+                starButton.innerHTML = '<img src="https://f.feridinha.com/6uoUR.png" style="background: none; border: none; filter: grayscale(0%);">';
+            }
+        }
+    });
+
+    document.getElementsByClassName('pagination')[0].animate([{ opacity: "0" }, { opacity: "1" }], { duration: 200 });
+}
+
+document.querySelectorAll('.post').forEach(post => {
+    let starButton = document.createElement("button");
+    starButton.classList.add('star-button');
+    starButton.innerHTML = '<img src="https://f.feridinha.com/6uoUR.png" style="background: none; border: none; padding: 0; padding-top: 4px; filter: grayscale(100%); transition: filter 0.3s;">';
+    starButton.style.cursor = "pointer";
+    starButton.style.background = "none";
+    starButton.style.border = "none";
+
+
+    if (!post.id) post.id = "post-" + Math.random().toString(36).substr(2, 9);
+
+
+    let starredPosts = JSON.parse(localStorage.getItem("starredPosts")) || [];
+    if (starredPosts.includes(post.id)) {
+        starButton.innerHTML = '<img src="https://f.feridinha.com/6uoUR.png" style="background: none; border: none; filter: grayscale(0%);">';
+    }
+
+
+    starButton.addEventListener("click", () => {
+        toggleStar(post.id, starButton);
+    });
+
+    let postActions = post.querySelector('.post-actions');
+    if (postActions) {
+        postActions.appendChild(starButton);
+    }
+});
+
+function toggleStar(postId, starButton) {
+    let starredPosts = JSON.parse(localStorage.getItem("starredPosts")) || [];
+    if (starredPosts.includes(postId)) {
+        starredPosts = starredPosts.filter(id => id !== postId);
+        starButton.innerHTML = '<img src="https://f.feridinha.com/6uoUR.png" style="background: none; border: none; filter: grayscale(100%); transition: filter 0.3s;">';
+    } else {
+        starredPosts.push(postId);
+        starButton.innerHTML = '<img src="https://f.feridinha.com/6uoUR.png" style="background: none; border: none; filter: grayscale(0%);">';
+    }
+    localStorage.setItem("starredPosts", JSON.stringify(starredPosts));
 }
