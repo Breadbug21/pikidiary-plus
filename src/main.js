@@ -408,7 +408,7 @@ note.appendChild(text);
 var warning = document.createElement('div');
 warning.id = 'warning';
 
-document.getElementsByClassName('char-counter')[0].appendChild(warning);
+
 
 
 var margintext = document.createElement('p');
@@ -439,6 +439,7 @@ async function verc() {
             console.log("An update is avaiable.");
             warning.innerHTML = `<p id="warning-p">An update is available! Please download it <a href="https://github.com/Stupid-Idiots-United/pikidiary-plus"> here.</a></p>`;
             warning.style.display = "block";
+            document.getElementsByClassName('char-counter')[0].appendChild(warning);
         }
     } catch (error) {
         console.error("Error fetching or comparing the text:", error);
