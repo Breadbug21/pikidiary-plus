@@ -30,7 +30,7 @@ and much more!
 
 # How to Install (for Firefox)
 
-## Download the extension on the firefox addon store (https://addons.mozilla.org/fr/firefox/addon/pikidiary/)
+## Download the extension on the firefox addon store (https://addons.mozilla.org/firefox/addon/pikidiary/)
 
 or:
 
