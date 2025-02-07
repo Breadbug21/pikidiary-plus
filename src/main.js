@@ -208,7 +208,7 @@ document.querySelectorAll(".tab")[3].addEventListener("click", see);
 
 
 
-const targetString = "023";
+const targetString = "024";
 
 const textFileURL = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/update/version.txt";
 
@@ -343,3 +343,56 @@ else {
     }
 
 
+    const style = document.createElement("style");
+    style.textContent = `
+      #note {
+    background-color: rgb(248, 190, 0);
+    height: 200px;
+    text-align: center;
+    box-shadow: 0px 0px 10px black;
+    width: 100%;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    margin-top:10px;
+}
+
+#text {
+    height: 80%;
+    width: 90%;
+    background-color: rgb(248, 190, 0);
+    border: none;
+    resize: none;
+}
+    `;
+    document.head.appendChild(style);
+    
+
+    let note = document.createElement('div');
+    note.textContent = 'note';
+    note.id = 'note';
+
+    let text = document.createElement('textarea');
+    text.id = 'text';
+    
+    let storedText = localStorage.getItem("text");
+
+    if (storedText !== null) {
+      try {
+        text.value = storedText;
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+      }
+    }
+
+    else {
+      text.value = "";
+    }
+
+    text.addEventListener("input", () => {
+      localStorage.setItem("text", text.value);
+    });
+
+
+
+    document.getElementsByClassName('bio')[0].appendChild(note);
+    note.appendChild(text);
