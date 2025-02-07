@@ -29,6 +29,11 @@ and much more!
 - Enjoy!
 
 # How to Install (for Firefox)
+
+## Download the extension on the firefox addon store (https://addons.mozilla.org/fr/firefox/addon/pikidiary/)
+
+or:
+
 - Download the ZIP/XPI from releases
 
 - Go to about:debugging#/runtime/this-firefox
