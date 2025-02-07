@@ -25,7 +25,7 @@
         "js": ["achievements/dev.js"]
       },
       {
-        "matches": ["https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*", "https://pikidiary.lol/@hacks.guide", "https://pikidiary.lol/@hacks.guide?*"],
+        "matches": ["https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*", "https://pikidiary.lol/@hacks.guide", "https://pikidiary.lol/@hacks.guide?*", "https://pikidiary.lol/@mpax235", "https://pikidiary.lol/@mpax235?*"],
         "js": ["achievements/secret.js"]
       }
     ],
