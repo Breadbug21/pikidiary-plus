@@ -61,3 +61,6 @@ or:
 - ZIP it
 
 - Follow install instructions above.
+
+# how to be swag
+- be swag
