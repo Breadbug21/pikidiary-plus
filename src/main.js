@@ -1,5 +1,5 @@
 //this code is gonna make me fucking depressed
-
+// womp womp you fat fuck, I had to do the stars
 let pikicoin = JSON.parse(localStorage.getItem("pikicoin"));
 
 if (pikicoin) {
