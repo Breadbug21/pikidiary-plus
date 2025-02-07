@@ -7,7 +7,7 @@
   },
 
     "name": "PikiDiary+",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "description": "PikiDiary+ is an extension to improve your experience on https://pikidiary.lol! Made with <3 by Nomaakip, Wish, Squirrel, and Names.",
     "manifest_version": 3,
     "action": {
@@ -25,7 +25,7 @@
         "js": ["achievements/dev.js"]
       },
       {
-        "matches": ["https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*"],
+        "matches": ["https://pikidiary.lol/@wish", "https://pikidiary.lol/@wish?*", "https://pikidiary.lol/@hacks.guide", "https://pikidiary.lol/@hacks.guide?*"],
         "js": ["achievements/secret.js"]
       }
     ],
