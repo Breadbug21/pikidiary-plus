@@ -19,6 +19,8 @@ greg[8] = "pikidiary my beloved";
 greg[9] = "i fucking love pikidiary";
 greg[10] = "say gex is peak";
 greg[12] = "i bought a property in egypt";
+greg[13] = "live laugh pikidiary";
+greg[14] = "zoo-wee mama!";
 
 const rand = Math.floor(Math.random() * greg.length);
 
