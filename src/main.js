@@ -573,7 +573,7 @@ async function verc() {
 verc();
 
 
-const display = "2";
+const display = "1";
 
 const displayFile = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/popup/display.txt";
 
