@@ -1,7 +1,0 @@
-template: |
-  ## What’s Changed
-
-  $CHANGES
-prerelease-identifier: 'alpha'
-latest: 'false'
-prerelease: 'true'
