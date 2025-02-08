@@ -1,15 +1,5 @@
-//this code is gonna make me fucking depressed
 
-    let pikicoin = JSON.parse(localStorage.getItem("pikicoin"));
-
-    if (pikicoin) {
-        pikicoin = pikicoin;
-    }
-    else {
-        pikicoin = 0;
-    }
-
-
+let pikicoin = JSON.parse(localStorage.getItem("pikicoin")) || 0;
 
 let clicked = 0;
 
@@ -108,11 +98,14 @@ function test() {
         elem[i].style.display = "none";
     }
 
+
     if (clicked >= 10) {
         document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
-    <input id="idea" type="checkbox">post ideas</input>
-    <input id="starr" type="checkbox">Star Posts [BETA]</input>
+    <div id="feature-container">
+    <div id="feature-div"><h1 id="featureTitle">Posts Ideas</h1><p>By <a href="https://pikidiary.lol/@hacks.guide">nomaakip</a></p><p id ="featureText">Random Posts ideas!</p><input id="idea" type="checkbox">enable/disable</div>
+    <div id="feature-div"><h1 id="featureTitle">Star Posts [BETA]</h1><p>By <a href="https://pikidiary.lol/@hacks.guide">nomaakip</a> and <a href="https://pikidiary.lol/@Squirrel">Squirrel</a></p><p id ="featureText">Gives you the ability to star posts.</p><input id="starr" type="checkbox">enable/disable</div>
+    </div>
     <br>
     <a href="https://stupid-idiots-united.github.io/website/confirm"><button>Send ping to counter so we can estimate how many people use PikiDiary+</button></a>
     <p id="luv">made with love by nomaakip (@hacks.guide), wish (@wish), squirrel (@squirrel), and names (@names)<3</p>
@@ -123,12 +116,16 @@ function test() {
         document.getElementById('pl').innerHTML = "Pikicoins:" + pikicoin;
         document.getElementById("cme").addEventListener("click", pikic);
     }
+
+
     else {
         clicked++;
         document.getElementsByClassName("pagination")[0].innerHTML = `
     <h1 id="plus">PikiDiary+ Beta</h1>
-    <input id="idea" type="checkbox">post ideas</input>
-    <input id="starr" type="checkbox">Star Posts [BETA]</input>
+    <div id="feature-container">
+    <div id="feature-div"><h1 id="featureTitle">Posts Ideas</h1><p>By <a href="https://pikidiary.lol/@hacks.guide">nomaakip</a></p><p id ="featureText">Random Posts ideas!</p><input id="idea" type="checkbox">enable/disable</div>
+    <div id="feature-div"><h1 id="featureTitle">Star Posts [BETA]</h1><p>By <a href="https://pikidiary.lol/@hacks.guide">nomaakip</a> and <a href="https://pikidiary.lol/@Squirrel">Squirrel</a></p><p id ="featureText">Gives you the ability to star posts.</p><input id="starr" type="checkbox">enable/disable</div>
+    </div>
     <br>
     <a href="https://stupid-idiots-united.github.io/website/confirm"><button>Send ping to counter so we can estimate how many people use PikiDiary+</button></a>
     <p id="luv">made with love by nomaakip, wish, and squirrel <3</p>
@@ -195,6 +192,67 @@ function see() {
     }, 2000);
 }
 
+
+//Debug menu for devs
+var debugDiv = document.createElement('div');
+debugDiv.id = "debug-div";
+debugDiv.style.display = 'none';
+document.body.appendChild(debugDiv);
+
+var consoleDiv = document.createElement('div');
+consoleDiv.id = "console-div";
+document.body.appendChild(consoleDiv);
+
+const debugText = 'Pikidiary+ Debug Menu ';
+
+function ToggleDebug() {
+    if (debugDiv.style.display === 'none') {
+        debugDiv.style.display = 'block';
+        consoleDiv.style.display = 'block';
+        getTime();
+        setInterval(getTime, 1000);
+    } else {
+        debugDiv.style.display = 'none';
+        consoleDiv.style.display = 'none';
+    }
+    console.log("Debug Menu Loaded!");
+}
+
+function getTime() {
+    const date = new Date();
+    const time = date.toLocaleTimeString();
+    debugDiv.innerHTML = `${debugText} | ${time}`;
+}
+
+const originalConsoleLog = console.log;
+console.log = function (message) {
+    originalConsoleLog.apply(console, arguments);
+    const logMessage = document.createElement('div');
+    logMessage.textContent = message;
+    consoleDiv.appendChild(logMessage);
+    consoleDiv.scrollTop = consoleDiv.scrollHeight;
+};
+
+const originalConsoleError = console.error;
+console.error = function (message) {
+    originalConsoleError.apply(console, arguments);
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = message;
+    errorMessage.style.color = 'red';
+    errorMessage.style.fontWeight = 'bold';
+    consoleDiv.appendChild(errorMessage);
+    consoleDiv.scrollTop = consoleDiv.scrollHeight;
+};
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "F9") {
+        ToggleDebug();
+    }
+});
+
+
+
+
 function StarSettings() {
     let starButton = document.getElementById('starfrfr');
     if (document.getElementById('starr').checked == true) {
@@ -230,7 +288,12 @@ function StarTab() {
         }
     });
 
-    document.getElementsByClassName('pagination')[0].animate([{ opacity: "0" }, { opacity: "1" }], { duration: 200 });
+
+    const pagination = document.getElementsByClassName('pagination')[0];
+
+    if (pagination) {
+        document.getElementsByClassName('pagination')[0].animate([{ opacity: "0" }, { opacity: "1" }], { duration: 200 });
+    }
 }
 
 
@@ -280,29 +343,29 @@ function toggleStar(postId, starButton) {
 
 let starredd = JSON.parse(localStorage.getItem("starredd"));
 
-    if (starredd) {
-        starredd = starredd;
-        if (starredd == 'b') {
-            document.querySelectorAll('#starfrfr').forEach(star => {
-                starTab.style.display = 'none';
-                star.style.display = 'none';
-            });
-        }
-        if (starredd == 'a') {
-            document.getElementById('starTab').style.display = 'block';
-            document.getElementById('starfrfr').style.display = 'block';
-        }
+if (starredd) {
+    starredd = starredd;
+    if (starredd == 'b') {
+        document.querySelectorAll('#starfrfr').forEach(star => {
+            starTab.style.display = 'none';
+            star.style.display = 'none';
+        });
     }
-
-
-    else {
-        starredd = 'a';
-        let starButton = document.getElementById('starfrfr');
+    if (starredd == 'a') {
         document.getElementById('starTab').style.display = 'block';
-        if (starButton) {
-            starButton.style.display = 'block';
-        }
+        document.getElementById('starfrfr').style.display = 'block';
     }
+}
+
+
+else {
+    starredd = 'a';
+    let starButton = document.getElementById('starfrfr');
+    document.getElementById('starTab').style.display = 'block';
+    if (starButton) {
+        starButton.style.display = 'block';
+    }
+}
 
 
 
@@ -337,6 +400,11 @@ style.textContent = `
     margin-top:10px;
 }
 
+#feature-container {
+display:flex;
+gap:20px;
+}
+
 #text {
     height: 80%;
     width: 90%;
@@ -368,6 +436,63 @@ text-align:center;
 
 .button {max-height:30px}
 
+
+
+
+#debug-div {
+    position: fixed;
+    top: 5%;
+    left: 1%;
+    padding: 5px;
+    border-radius: 6px;
+    z-index: 1000;
+    background:rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    color: white;
+    display: none;
+    animation:fadeIn .3s ease-in-out;
+}
+
+#console-div {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 300px;
+    height: 150px;
+    background: #535353;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    animation:fadeIn .3s ease-in-out;
+    color: white;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 10px;
+    overflow-y: auto;
+    border-radius: 6px;
+    z-index: 1000;
+    display: none;
+}
+
+#feature-div {
+            display: block;
+            background: #535353;
+            color: #fff;
+            max-width: 90%;
+            width: 300px;
+            height: auto;
+            padding: 10px;
+        }
+
+
+@keyframes fadeIn {
+0% {
+opacity:0
+}
+100% {
+opacity:1
+}
+}
 
     `;
 document.head.appendChild(style);
@@ -403,25 +528,22 @@ document.getElementsByClassName('bio')[0].appendChild(note);
 note.appendChild(text);
 
 
-//test popup
-
-var warning = document.createElement('div');
-warning.id = 'warning';
-
-
-
-
 var margintext = document.createElement('p');
 margintext.style.fontSize = "0.1px";
 margintext.style.marginTop = "5px";
-document.getElementsByClassName('char-counter')[0].appendChild(margintext);
+const warning = document.getElementById('warning');
+if (warning) {
+    warning.appendChild(margintext);
+}
 
-
-const targetString = "025";
+const targetString = "026";
 
 const textFileURL = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/update/version.txt";
 
 async function verc() {
+    var warning = document.createElement('div');
+    warning.id = 'warning';
+
     try {
         const response = await fetch(textFileURL);
 
@@ -444,10 +566,65 @@ async function verc() {
     } catch (error) {
         console.error("Error fetching or comparing the text:", error);
     }
+
 }
 
 
 verc();
+
+
+const display = "1";
+
+const displayFile = "https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/popup/display.txt";
+
+async function popupc() {
+
+
+    try {
+    const response = await fetch(displayFile);
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const textContent = await response.text();
+
+    const trimmedText = textContent.trim();
+
+
+    if (trimmedText === display) {
+        DisplayPopupText();
+    } else {
+        console.log('Popup disabled by a developer.');
+    }
+} catch (error) {
+    console.error("Error fetching or comparing the text:", error);
+}
+
+
+}
+
+popupc();
+
+
+function DisplayPopupText() {
+
+    var warning = document.createElement('div');
+    warning.id = 'warning';
+    
+    fetch("https://raw.githubusercontent.com/Stupid-Idiots-United/pikidiary-plus/refs/heads/main/popup/text.txt")
+        .then(response => response.text())
+        .then(data => {
+            console.log("Popup enabled.");
+        warning.innerHTML = `<p id="warning-p">${data}</p>`;
+        warning.style.display = "block";
+        document.getElementsByClassName('char-counter')[0].appendChild(warning);
+        })
+        .catch(error => {
+            console.error("Error fetching text:", error);
+        });
+}
+
 
 
 function reloadStars() {
@@ -459,25 +636,27 @@ function reloadStars() {
         starButton.style.background = "none";
         starButton.style.border = "none";
         starButton.id = "starfrfr";
-    
-    
+
+
         if (!post.id) post.id = "post-" + Math.random().toString(36).substr(2, 9);
-    
-    
+
+
         let starredPosts = JSON.parse(localStorage.getItem("starredPosts")) || [];
         if (starredPosts.includes(post.id)) {
             starButton.innerHTML = '<img src="https://f.feridinha.com/6uoUR.png" style="background: none; border: none; filter: grayscale(0%);">';
         }
-    
-    
+
+
         starButton.addEventListener("click", () => {
             toggleStar(post.id, starButton);
         });
-    
+
         let postActions = post.querySelector('.post-actions');
         if (postActions) {
             postActions.appendChild(starButton);
         }
     });
-    
+
 }
+
+
